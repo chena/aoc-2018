@@ -1,17 +1,14 @@
+from util import get_input
+
 """
 part 1: calculate total frequency from input
 part 2: find the first repeating frequency 
 """
-def _get_input():
-	with open('input/day1.0.txt') as f:
-		content = f.readlines()
-	return content
-
 def total_freq():
-	return sum([int(v) for v in _get_input()])
+	return sum([int(v) for v in get_input('day01.txt')])
 
 def repeat_freq():
-	data = _get_input()
+	data = get_input('day01.txt')
 	total = 0
 	repeat_freq = None
 	cache = {0}
@@ -25,5 +22,5 @@ def repeat_freq():
 			cache.add(total)
 	return repeat_freq
 
-# print total_freq()
-print repeat_freq()
+print total_freq()
+# print repeat_freq()
